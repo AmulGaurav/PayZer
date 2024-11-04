@@ -33,7 +33,7 @@ const SendMoney = () => {
 
   useLayoutEffect(() => {
     axios
-      .get("http://localhost:3000/api/v1/user/me", {
+      .get(BACKEND_URL + "/api/v1/user/me", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },

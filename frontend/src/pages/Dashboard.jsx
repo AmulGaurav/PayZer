@@ -5,6 +5,7 @@ import Users from "../components/Users";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Loader from "../components/Loader";
+import { BACKEND_URL } from "../../utils/constant";
 
 const Dashboard = () => {
   const [loading, setLoading] = useState(true);
@@ -14,7 +15,7 @@ const Dashboard = () => {
 
   useLayoutEffect(() => {
     axios
-      .get("http://localhost:3000/api/v1/user/me", {
+      .get(BACKEND_URL + "/api/v1/user/me", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
