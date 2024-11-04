@@ -26,6 +26,11 @@ const appRouter = createBrowserRouter([
     errorElement: <Error />,
   },
   {
+    path: "/dashboard",
+    element: <Dashboard />,
+    errorElement: <Error />,
+  },
+  {
     path: "/send",
     element: <SendMoney />,
     errorElement: <Error />,
