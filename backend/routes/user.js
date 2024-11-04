@@ -7,6 +7,12 @@ const { signupSchema, signinSchema, updateUserSchema } = require("../types");
 
 const router = express.Router();
 
+router.get("/me", authMiddleware, async (req, res) => {
+  const user = await User.findById(req.userId, "firstName");
+
+  res.json({ name: user.firstName });
+});
+
 router.post("/signup", async (req, res) => {
   const { success } = signupSchema.safeParse(req.body);
 
@@ -76,7 +82,9 @@ router.get("/bulk", authMiddleware, async (req, res) => {
     "firstName lastName"
   );
 
-  res.json({ users });
+  res.json({
+    users: users.filter((user) => user._id.toString() !== req.userId),
+  });
 });
 
 module.exports = router;
