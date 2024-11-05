@@ -51,7 +51,7 @@ const SendMoney = () => {
   return (
     <div className="flex justify-center h-screen bg-gray-100">
       <div className="h-full flex flex-col justify-center">
-        <div className="border h-min w-96 p-4 bg-white shadow-lg rounded-lg">
+        <div className="border h-min w-80 sm:w-96 p-4 bg-white shadow-lg rounded-lg">
           <div className="flex flex-col space-y-1.5 p-6">
             <h2 className="text-3xl font-bold text-center">Send Money</h2>
           </div>
