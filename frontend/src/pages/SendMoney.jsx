@@ -28,7 +28,7 @@ const SendMoney = () => {
     );
 
     alert("Success ✅");
-    setAmount("");
+    navigate("/dashboard");
   }
 
   useLayoutEffect(() => {
