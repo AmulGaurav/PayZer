@@ -25,7 +25,7 @@ router.post("/transfer", authMiddleware, async (req, res) => {
     );
 
     if (sender.balance < amount)
-      return res.status(400).json({ msg: "Insufficient balance" });
+      return res.status(400).json({ message: "Insufficient balance" });
 
     const receiver = await Account.findOne({ userId: to }).session(session);
 
@@ -38,12 +38,12 @@ router.post("/transfer", authMiddleware, async (req, res) => {
     await session.commitTransaction();
     session.endSession();
 
-    res.json({ msg: "Money sent successfully" });
+    res.json({ message: "Money sent successfully" });
   } catch (e) {
     await session.abortTransaction();
     session.endSession();
 
-    res.status(400).json({ msg: "Transaction failed" });
+    res.status(400).json({ message: "Transaction failed" });
   }
 });
 

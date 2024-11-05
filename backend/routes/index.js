@@ -9,7 +9,7 @@ router.use("/account", accountRouter);
 
 // Test Route
 router.get("/test", (req, res) => {
-  res.json({ msg: "Hello, World!" });
+  res.json({ message: "Hello, World!" });
 });
 
 module.exports = router;
