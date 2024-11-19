@@ -17,7 +17,8 @@ const Balance = () => {
 
   useEffect(() => {
     getBalance();
-  });
+  }, [balance]);
+  
   return <div className="text-lg font-bold">Your Balance - Rs {balance}</div>;
 };
 
